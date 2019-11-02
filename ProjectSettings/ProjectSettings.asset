@@ -164,7 +164,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.GoldenGames.Lodestone
+    Android: com.GoldenTreeGames.Lodestone
     Standalone: com.DefaultCompany.Lodestone
   buildNumber: {}
   AndroidBundleVersionCode: 1
@@ -650,7 +650,7 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend:
-    Android: 1
+    Android: 0
   il2cppCompilerConfiguration: {}
   managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
