@@ -1,0 +1,10 @@
+{
+  "name": "com.andtech.andtechassets",
+  "displayName": "Andtech",
+  "version": "1.0.0",
+  "unity": "2018.3",
+  "description": "My custom codebase.",
+  "author": "Andtech",
+  "dependencies": {
+  }
+}
