@@ -21,7 +21,8 @@ namespace PhysicsSystem {
 					UnlinkTarget(target);
 
 				target = value;
-				LinkTarget(target);
+				if (target != null)
+					LinkTarget(target);
 
 				#region LOCAL_FUNCTION
 				void LinkTarget(MagnetTarget t) {
@@ -53,9 +54,14 @@ namespace PhysicsSystem {
 			Debug.DrawRay(magnet.Affector.Position, deltaParallel, Color.yellow.Alpha(0.5F));
 			Debug.DrawRay(magnet.Affector.Position + deltaParallel, deltaPerpendicular, Color.yellow.Alpha(0.5F));
 
-			target.Rigidbody.velocity = deltaParallel.normalized * push;
+			if (target.Rigidbody.mass > magnet.Holder.Rigidbody.mass) {
+				magnet.Holder.AddForce(deltaParallel);
+			}
+			else {
+				target.Rigidbody.velocity = deltaParallel.normalized * push;
 
-			(target as IMagnetizeHandler)?.OnMagnetize();
+				(target as IMagnetizeHandler)?.OnMagnetize();
+			}
 		}
 
 		#region CALLBACK
