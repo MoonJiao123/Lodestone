@@ -54,6 +54,11 @@ namespace Andtech {
 		/// </summary>
 		public const float TURNS2RAD = 2.0F * Mathf.PI / MAX;
 
+		public static readonly Rotation Up = new Rotation(ONEFOURTHREV * 0);
+		public static readonly Rotation Right = new Rotation(ONEFOURTHREV * 1);
+		public static readonly Rotation Down = new Rotation(ONEFOURTHREV * 2);
+		public static readonly Rotation Left = new Rotation(ONEFOURTHREV * 3);
+
 		/// <summary>
 		/// Constructs a rotation with <paramref name="turns"/> clockwise 90 degree turns.
 		/// </summary>

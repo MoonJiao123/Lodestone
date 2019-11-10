@@ -6,12 +6,12 @@ namespace Andtech {
 	/// </summary>
 	/// <typeparam name="T">The type of the singleton instance.</typeparam>
 	public abstract class Singleton<T> where T : Singleton<T> {
-		public static T Current {
-			get => current as T;
-			set => current = value;
+		public static T Instance {
+			get => instance as T;
+			set => instance = value;
 		}
-		public static bool HasSingleton => !(current is null);
+		public static bool HasInstance => !(instance is null);
 
-		private static T current;
+		private static T instance;
 	}
 }

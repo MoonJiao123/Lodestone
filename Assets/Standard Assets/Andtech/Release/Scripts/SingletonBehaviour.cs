@@ -7,22 +7,22 @@ namespace Andtech {
 	/// </summary>
 	/// <typeparam name="T">The type of the singleton instance.</typeparam>
 	public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonBehaviour<T> {
-		public static T Current {
-			get => current as T;
-			set => current = value;
+		public static T Instance {
+			get => instance as T;
+			set => instance = value;
 		}
-		public static bool HasSingleton => !(current is null);
+		public static bool HasInstance => !(instance is null);
 
-		private static MonoBehaviour current;
+		private static T instance;
 
 		#region MONOBEHAVIOUR
 		protected virtual void OnEnable() {
-			Current = (T)this;
+			Instance = (T)this;
 		}
 
 		protected virtual void OnDisable() {
-			if (ReferenceEquals(Current, this))
-				Current = null;
+			if (ReferenceEquals(Instance, this))
+				Instance = null;
 		}
 		#endregion MONOBEHAVIOUR
 	}
